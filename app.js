@@ -51,6 +51,7 @@ app.get('/weather/:latlon', async (req, res) => {
     const lon = locations[1];
 
     // Send request to openweather API
+    // const apiKey = "3a3602fa80a544e1e9e329976f95bec9";
     const apiKey = process.env.API_KEY;
     const weather_response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
     const weather_json = await weather_response.json();
